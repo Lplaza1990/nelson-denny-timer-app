@@ -1,73 +1,59 @@
+/* src/App.css */
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
 }
 
-.container {
+.quiz-container {
+  background-color: white;
   max-width: 800px;
-  margin: 40px auto;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-.timer {
-  font-size: 24px;
-  text-align: center;
-  margin: 20px 0;
-  color: #444;
-}
-
-.question {
+.question-block {
   margin-bottom: 20px;
-  font-size: 18px;
-  color: #222;
 }
 
-.options {
-  list-style: none;
-  padding: 0;
+.options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.options li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #eaeaea;
-  border-radius: 6px;
+.option-label {
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s ease;
 }
 
-.options li:hover {
-  background-color: #d4d4d4;
+.option-label:hover {
+  background-color: #e6f7ff;
+}
+
+.option-label input {
+  margin-right: 8px;
 }
 
 button {
-  margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
   border: none;
+  background-color: #0070f3;
+  color: white;
   border-radius: 6px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-.score {
-  font-size: 22px;
-  text-align: center;
-  color: green;
-  margin-top: 30px;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
