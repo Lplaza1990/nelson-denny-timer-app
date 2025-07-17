@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+const [thing, setThing] = useState(initialValue);
+
 import "./App.css";
 
 const questions = {
@@ -42,4 +43,6 @@ const questions = {
 
 function App() {
   const sections = ["vocabulary", "comprehension", "synonyms"];
-  const [sectionIndex, setSectionIn]()
+ const [finished, setFinished] = useState(false);
+
+
