@@ -1,68 +1,72 @@
-// Sample Nelson-Denny practice questions
-// You can expand each section using the PDFs you uploaded
+// src/questions.js
 
-export const vocabQuestions = [
-  {
-    question: "The word *benevolent* most nearly means:",
-    options: ["Angry", "Generous", "Lazy", "Hostile"],
-    answer: "Generous",
-  },
-  {
-    question: "The word *obscure* most nearly means:",
-    options: ["Clear", "Hidden", "Shiny", "Evident"],
-    answer: "Hidden",
-  },
-  {
-    question: "The word *concisely* most nearly means:",
-    options: ["Quickly", "Briefly", "Carefully", "Clearly"],
-    answer: "Briefly",
-  },
-  {
-    question: "The word *alleviate* most nearly means:",
-    options: ["Aggravate", "Relieve", "Avoid", "Assume"],
-    answer: "Relieve",
-  },
-];
+const questions = {
+  Vocabulary: [
+    {
+      number: 1,
+      question: "ABANDON means:",
+      options: ["To leave", "To argue", "To improve", "To remember"],
+      answer: "To leave",
+    },
+    {
+      number: 2,
+      question: "BENEFIT means:",
+      options: ["Loss", "Advantage", "Punishment", "Cost"],
+      answer: "Advantage",
+    },
+    {
+      number: 3,
+      question: "CAPABLE means:",
+      options: ["Unable", "Able", "Slow", "Small"],
+      answer: "Able",
+    },
+    {
+      number: 4,
+      question: "DETERIORATE means:",
+      options: ["Improve", "Weaken", "Strengthen", "Celebrate"],
+      answer: "Weaken",
+    },
+    {
+      number: 5,
+      question: "ESSENTIAL means:",
+      options: ["Unnecessary", "Important", "False", "Fake"],
+      answer: "Important",
+    },
+    {
+      number: 6,
+      question: "FRAUD means:",
+      options: ["Honesty", "Loyalty", "Deception", "Lawyer"],
+      answer: "Deception",
+    },
+    {
+      number: 7,
+      question: "HASTY means:",
+      options: ["Quick", "Late", "Careful", "Slow"],
+      answer: "Quick",
+    },
+    {
+      number: 8,
+      question: "IGNITE means:",
+      options: ["Extinguish", "Throw", "Light", "Move"],
+      answer: "Light",
+    },
+    {
+      number: 9,
+      question: "JUSTIFY means:",
+      options: ["Explain", "Refuse", "Punish", "Delay"],
+      answer: "Explain",
+    },
+    {
+      number: 10,
+      question: "KIN means:",
+      options: ["Enemy", "Relative", "Friend", "Neighbor"],
+      answer: "Relative",
+    },
+  ],
 
-export const comprehensionQuestions = [
-  {
-    question:
-      "The passage states: 'Plants require sunlight and water to produce food through photosynthesis.' Based on this, which of the following is true?",
-    options: [
-      "Plants only need water to survive.",
-      "Photosynthesis occurs only at night.",
-      "Sunlight is essential for plant food production.",
-      "Plants do not need sunlight.",
-    ],
-    answer: "Sunlight is essential for plant food production.",
-  },
-  {
-    question:
-      "According to the passage: 'The Wright brothers successfully flew the first airplane in 1903.' What can be inferred?",
-    options: [
-      "They invented the car.",
-      "Air travel started after 1903.",
-      "The Wright brothers were pilots in WWI.",
-      "Planes existed before the 1900s.",
-    ],
-    answer: "Air travel started after 1903.",
-  },
-];
+  // We'll add Reading and Synonyms sections next
+  Reading: [],
+  SynonymsAntonyms: []
+};
 
-export const synonymAntonymQuestions = [
-  {
-    question: "Which is a synonym for *happy*?",
-    options: ["Miserable", "Angry", "Joyful", "Sad"],
-    answer: "Joyful",
-  },
-  {
-    question: "Which is an antonym for *honest*?",
-    options: ["Trustworthy", "Deceitful", "Loyal", "Humble"],
-    answer: "Deceitful",
-  },
-  {
-    question: "Which is a synonym for *fragile*?",
-    options: ["Tough", "Strong", "Delicate", "Rough"],
-    answer: "Delicate",
-  },
-];
+export default questions;
