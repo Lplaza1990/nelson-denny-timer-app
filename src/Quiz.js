@@ -1,63 +1,56 @@
-// Quiz.js
-
+// src/Quiz.js
 import React, { useState } from "react";
 import { vocabQuestions } from "./questions";
-import "./App.css";
+import Result from "./Result";
 
-const Quiz = ({ questions = vocabQuestions }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
+function Quiz() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  const [showResults, setShowResults] = useState(false);
-  const [userAnswers, setUserAnswers] = useState([]);
+  const [finished, setFinished] = useState(false);
 
-  const currentQuestion = questions[currentIndex];
+  const handleAnswer = (choice) => {
+    const updatedAnswers = [...answers, choice];
+    setAnswers(updatedAnswers);
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
-
-  const handleSubmit = () => {
-    const isCorrect = selectedOption === currentQuestion.answer;
-
-    if (isCorrect) {
+    if (choice === vocabQuestions[currentQuestion].answer) {
       setScore(score + 1);
     }
 
-    setUserAnswers([
-      ...userAnswers,
-      {
-        question: currentQuestion.question,
-        selected: selectedOption,
-        correct: currentQuestion.answer,
-        isCorrect,
-      },
-    ]);
-
-    setSelectedOption("");
-
-    if (currentIndex + 1 < questions.length) {
-      setCurrentIndex(currentIndex + 1);
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < vocabQuestions.length) {
+      setCurrentQuestion(nextQuestion);
     } else {
-      setShowResults(true);
+      setFinished(true);
     }
   };
 
-  const handleRestart = () => {
-    setCurrentIndex(0);
-    setSelectedOption("");
-    setScore(0);
-    setShowResults(false);
-    setUserAnswers([]);
-  };
+  if (finished) {
+    return <Result score={score} total={vocabQuestions.length} />;
+  }
+
+  const question = vocabQuestions[currentQuestion];
 
   return (
     <div className="quiz-container">
-      <h2>Nelson-Denny Vocabulary Practice</h2>
+      <h2>{`${currentQuestion + 1}. ${question.question}`}</h2>
+      <form>
+        {question.options.map((option, index) => (
+          <div key={index}>
+            <label>
+              <input
+                type="radio"
+                name={`question-${currentQuestion}`}
+                value={option}
+                onChange={() => handleAnswer(option)}
+              />
+              {option}
+            </label>
+          </div>
+        ))}
+      </form>
+    </div>
+  );
+}
 
-      {showResults ? (
-        <div className="results">
-          <h3>Your Score: {score} / {questions.length}</h3>
-          {userAnswers.map((ans, idx) => (
-            <div key={idx} className={`result-item ${ans.isCorrect ? "correct" : "incorrect"}`}>
-              <p><strong>{ans
+export default Quiz;
