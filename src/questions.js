@@ -1,72 +1,54 @@
-// src/questions.js
+// questions.js
 
-const questions = {
-  Vocabulary: [
-    {
-      number: 1,
-      question: "ABANDON means:",
-      options: ["To leave", "To argue", "To improve", "To remember"],
-      answer: "To leave",
-    },
-    {
-      number: 2,
-      question: "BENEFIT means:",
-      options: ["Loss", "Advantage", "Punishment", "Cost"],
-      answer: "Advantage",
-    },
-    {
-      number: 3,
-      question: "CAPABLE means:",
-      options: ["Unable", "Able", "Slow", "Small"],
-      answer: "Able",
-    },
-    {
-      number: 4,
-      question: "DETERIORATE means:",
-      options: ["Improve", "Weaken", "Strengthen", "Celebrate"],
-      answer: "Weaken",
-    },
-    {
-      number: 5,
-      question: "ESSENTIAL means:",
-      options: ["Unnecessary", "Important", "False", "Fake"],
-      answer: "Important",
-    },
-    {
-      number: 6,
-      question: "FRAUD means:",
-      options: ["Honesty", "Loyalty", "Deception", "Lawyer"],
-      answer: "Deception",
-    },
-    {
-      number: 7,
-      question: "HASTY means:",
-      options: ["Quick", "Late", "Careful", "Slow"],
-      answer: "Quick",
-    },
-    {
-      number: 8,
-      question: "IGNITE means:",
-      options: ["Extinguish", "Throw", "Light", "Move"],
-      answer: "Light",
-    },
-    {
-      number: 9,
-      question: "JUSTIFY means:",
-      options: ["Explain", "Refuse", "Punish", "Delay"],
-      answer: "Explain",
-    },
-    {
-      number: 10,
-      question: "KIN means:",
-      options: ["Enemy", "Relative", "Friend", "Neighbor"],
-      answer: "Relative",
-    },
-  ],
-
-  // We'll add Reading and Synonyms sections next
-  Reading: [],
-  SynonymsAntonyms: []
-};
-
-export default questions;
+export const vocabQuestions = [
+  {
+    question: "1. Choose the best synonym for the word 'benevolent'.",
+    options: ["Cruel", "Kind", "Lazy", "Angry"],
+    answer: "Kind"
+  },
+  {
+    question: "2. Choose the best antonym for the word 'opaque'.",
+    options: ["Solid", "Clear", "Dark", "Thick"],
+    answer: "Clear"
+  },
+  {
+    question: "3. Choose the best synonym for the word 'audible'.",
+    options: ["Silent", "Visible", "Heard", "Tangible"],
+    answer: "Heard"
+  },
+  {
+    question: "4. Choose the best synonym for the word 'mitigate'.",
+    options: ["Increase", "Worsen", "Relieve", "Ignore"],
+    answer: "Relieve"
+  },
+  {
+    question: "5. Choose the best antonym for the word 'vivid'.",
+    options: ["Bright", "Dull", "Colorful", "Clear"],
+    answer: "Dull"
+  },
+  {
+    question: "6. Choose the best synonym for the word 'elated'.",
+    options: ["Sad", "Angry", "Joyful", "Tired"],
+    answer: "Joyful"
+  },
+  {
+    question: "7. Choose the best antonym for the word 'scarce'.",
+    options: ["Limited", "Rare", "Abundant", "Insufficient"],
+    answer: "Abundant"
+  },
+  {
+    question: "8. Choose the best synonym for the word 'terminate'.",
+    options: ["Begin", "Cease", "Advance", "Persist"],
+    answer: "Cease"
+  },
+  {
+    question: "9. Choose the best antonym for the word 'complex'.",
+    options: ["Complicated", "Difficult", "Simple", "Hard"],
+    answer: "Simple"
+  },
+  {
+    question: "10. Choose the best synonym for the word 'brief'.",
+    options: ["Long", "Short", "Endless", "Extended"],
+    answer: "Short"
+  }
+];
