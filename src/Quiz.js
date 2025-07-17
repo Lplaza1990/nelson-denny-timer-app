@@ -1,37 +1,63 @@
-// src/Quiz.js
-import React from "react";
+// Quiz.js
+
+import React, { useState } from "react";
+import { vocabQuestions } from "./questions";
 import "./App.css";
 
-function Quiz({ section, question, selectedAnswer, onAnswer, onNext }) {
-  if (!question) return null;
+const Quiz = ({ questions = vocabQuestions }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState("");
+  const [score, setScore] = useState(0);
+  const [showResults, setShowResults] = useState(false);
+  const [userAnswers, setUserAnswers] = useState([]);
 
-  const { number, question: text, options } = question;
+  const currentQuestion = questions[currentIndex];
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    const isCorrect = selectedOption === currentQuestion.answer;
+
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    setUserAnswers([
+      ...userAnswers,
+      {
+        question: currentQuestion.question,
+        selected: selectedOption,
+        correct: currentQuestion.answer,
+        isCorrect,
+      },
+    ]);
+
+    setSelectedOption("");
+
+    if (currentIndex + 1 < questions.length) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setShowResults(true);
+    }
+  };
+
+  const handleRestart = () => {
+    setCurrentIndex(0);
+    setSelectedOption("");
+    setScore(0);
+    setShowResults(false);
+    setUserAnswers([]);
+  };
 
   return (
     <div className="quiz-container">
-      <h2>{section} Section</h2>
-      <div className="question-block">
-        <p><strong>{number}.</strong> {text}</p>
-        <div className="options-row">
-          {options.map((option, index) => (
-            <label key={index} className="option-label">
-              <input
-                type="radio"
-                name={`question-${number}`}
-                value={option}
-                checked={selectedAnswer === option}
-                onChange={() => onAnswer(option)}
-              />
-              {option}
-            </label>
-          ))}
-        </div>
-      </div>
-      <button onClick={onNext} disabled={!selectedAnswer}>
-        Next
-      </button>
-    </div>
-  );
-}
+      <h2>Nelson-Denny Vocabulary Practice</h2>
 
-export default Quiz;
+      {showResults ? (
+        <div className="results">
+          <h3>Your Score: {score} / {questions.length}</h3>
+          {userAnswers.map((ans, idx) => (
+            <div key={idx} className={`result-item ${ans.isCorrect ? "correct" : "incorrect"}`}>
+              <p><strong>{ans
