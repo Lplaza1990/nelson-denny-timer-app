@@ -1,36 +1,73 @@
-.App {
-  font-family: 'Arial', sans-serif;
-  max-width: 600px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
   margin: 40px auto;
-  padding: 20px;
-  border: 2px solid #eaeaea;
-  border-radius: 10px;
-  background-color: #fefefe;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  text-align: center;
   color: #333;
 }
 
-h2 {
-  font-size: 22px;
-  margin-bottom: 16px;
+.timer {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
   color: #444;
 }
 
-ul {
+.question {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #222;
+}
+
+.options {
   list-style: none;
   padding: 0;
 }
 
-li {
+.options li {
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #ccc;
+  background-color: #eaeaea;
   border-radius: 6px;
   cursor: pointer;
-  transition:
+  transition: background-color 0.3s;
+}
+
+.options li:hover {
+  background-color: #d4d4d4;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.score {
+  font-size: 22px;
+  text-align: center;
+  color: green;
+  margin-top: 30px;
+}
