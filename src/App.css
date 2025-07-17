@@ -1,59 +1,51 @@
-/* src/App.css */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f2f2f2;
-}
-
 .quiz-container {
-  background-color: white;
-  max-width: 800px;
+  padding: 20px;
+  max-width: 700px;
   margin: 0 auto;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-.question-block {
-  margin-bottom: 20px;
+.question-card {
+  margin-top: 20px;
 }
 
 .options-row {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin-top: 10px;
+  margin: 15px 0;
 }
 
 .option-label {
-  background-color: #f9f9f9;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.option-label:hover {
-  background-color: #e6f7ff;
-}
-
-.option-label input {
-  margin-right: 8px;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #0070f3;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #aaa;
   border-radius: 6px;
   cursor: pointer;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.option-label input {
+  margin: 0;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.result-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.correct {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+}
+
+.incorrect {
+  background-color: #f8d7da;
+  border: 1px solid #dc3545;
 }
