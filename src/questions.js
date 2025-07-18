@@ -1,20 +1,17 @@
-// questions.js
-
 export const vocabQuestions = [
   {
-    question: "The word 'benevolent' most nearly means:",
-    options: ["Angry", "Kind", "Careless", "Mean"],
-    answer: "Kind",
+    question: "What is the meaning of 'benevolent'?",
+    options: ["Kind", "Mean", "Hostile", "Greedy"],
+    answer: "Kind"
   },
   {
-    question: "The word 'augment' most nearly means:",
-    options: ["Decrease", "Replace", "Increase", "Hide"],
-    answer: "Increase",
+    question: "Select the synonym of 'diligent'.",
+    options: ["Lazy", "Hardworking", "Careless", "Forgetful"],
+    answer: "Hardworking"
   },
   {
-    question: "The word 'elusive' most nearly means:",
-    options: ["Common", "Hard to catch", "Visible", "Trivial"],
-    answer: "Hard to catch",
-  },
-  // You can continue adding more real questions from your uploaded materials here
+    question: "Choose the antonym of 'obscure'.",
+    options: ["Hidden", "Famous", "Dark", "Unknown"],
+    answer: "Famous"
+  }
 ];
