@@ -60,6 +60,7 @@ export const questions = {
       question: "Which word is an antonym of 'scarce'?",
       options: ["Rare", "Few", "Abundant", "Empty"],
       answer: "Abundant"
-    }
-  ]
-};
+    },
+    {
+      question:
+
