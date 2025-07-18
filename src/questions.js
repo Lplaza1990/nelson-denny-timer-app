@@ -61,3 +61,7 @@ export const questions = {
       options: ["Rare", "Few", "Abundant", "Empty"],
       answer: "Abundant"
     },
+    {
+      question: "Choose the synonym for 'grateful':",
+      options: ["Thankful", "Forgetful", "Careless", "Hopeful"],
+      answer: "Tha
