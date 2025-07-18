@@ -62,5 +62,9 @@ export const questions = {
       answer: "Abundant"
     },
     {
-      question:
-
+      question: "Choose the synonym for 'grateful':",
+      options: ["Thankful", "Forgetful", "Careless", "Hopeful"],
+      answer: "Thankful"
+    }
+  ]
+};
