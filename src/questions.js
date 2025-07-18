@@ -1,4 +1,5 @@
-export const vocabQuestions = [ ... ]
+
+export const vocabQuestions = [
   {
     question: "What is the meaning of 'benevolent'?",
     options: ["Kind", "Mean", "Hostile", "Greedy"],
