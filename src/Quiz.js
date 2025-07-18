@@ -1,31 +1,34 @@
 // src/Quiz.js
-import React, { useState } from "react";
-import { vocabQuestions } from "./questions";
-import Result from "./Result";
+import React, { useState } from 'react';
+import { vocabQuestions } from './questions';
+import Result from './Result';
+import './App.css';
 
-function Quiz() {
+const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  const [finished, setFinished] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showResult, setShowResult] = useState(false);
 
-  const handleAnswer = (choice) => {
-    const updatedAnswers = [...answers, choice];
-    setAnswers(updatedAnswers);
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
 
-    if (choice === vocabQuestions[currentQuestion].answer) {
+  const handleSubmit = () => {
+    if (selectedOption === vocabQuestions[currentQuestion].answer) {
       setScore(score + 1);
     }
 
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < vocabQuestions.length) {
-      setCurrentQuestion(nextQuestion);
+    setSelectedOption(null);
+
+    if (currentQuestion + 1 < vocabQuestions.length) {
+      setCurrentQuestion(currentQuestion + 1);
     } else {
-      setFinished(true);
+      setShowResult(true);
     }
   };
 
-  if (finished) {
+  if (showResult) {
     return <Result score={score} total={vocabQuestions.length} />;
   }
 
@@ -33,24 +36,13 @@ function Quiz() {
 
   return (
     <div className="quiz-container">
-      <h2>{`${currentQuestion + 1}. ${question.question}`}</h2>
-      <form>
-        {question.options.map((option, index) => (
-          <div key={index}>
-            <label>
+      <h2>Vocabulary Section</h2>
+      <div className="question-block">
+        <p>
+          <strong>{currentQuestion + 1}.</strong> {question.question}
+        </p>
+        <form>
+          {question.options.map((option, index) => (
+            <label key={index} className="option-label">
               <input
-                type="radio"
-                name={`question-${currentQuestion}`}
-                value={option}
-                onChange={() => handleAnswer(option)}
-              />
-              {option}
-            </label>
-          </div>
-        ))}
-      </form>
-    </div>
-  );
-}
-
-export default Quiz;
+                type="radio
