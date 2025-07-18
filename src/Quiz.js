@@ -1,4 +1,4 @@
-// src/Quiz.js
+
 import React, { useState } from 'react';
 import { vocabQuestions } from './questions';
 import './App.css';
@@ -20,7 +20,7 @@ const Quiz = ({ onFinish }) => {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setIsSubmitted(true);
-      onFinish(calculateScore());
+      onFinish && onFinish(calculateScore());
     }
   };
 
