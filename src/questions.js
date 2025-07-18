@@ -60,8 +60,6 @@ export const questions = {
       question: "Which word is an antonym of 'scarce'?",
       options: ["Rare", "Few", "Abundant", "Empty"],
       answer: "Abundant"
-    },
-    {
-      question: "Choose the synonym for 'grateful':",
-      options: ["Thankful", "Forgetful", "Careless", "Hopeful"],
-      answer: "Tha
+    }
+  ]
+};
