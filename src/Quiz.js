@@ -1,35 +1,46 @@
 // src/Quiz.js
 import React, { useState } from 'react';
 import { vocabQuestions } from './questions';
-import Result from './Result';
 import './App.css';
 
-const Quiz = () => {
+const Quiz = ({ onFinish }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showResult, setShowResult] = useState(false);
+  const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
+    setSelectedAnswers({
+      ...selectedAnswers,
+      [currentQuestion]: e.target.value,
+    });
   };
 
-  const handleSubmit = () => {
-    if (selectedOption === vocabQuestions[currentQuestion].answer) {
-      setScore(score + 1);
-    }
-
-    setSelectedOption(null);
-
-    if (currentQuestion + 1 < vocabQuestions.length) {
+  const handleNext = () => {
+    if (currentQuestion < vocabQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setShowResult(true);
+      setIsSubmitted(true);
+      onFinish(calculateScore());
     }
   };
 
-  if (showResult) {
-    return <Result score={score} total={vocabQuestions.length} />;
+  const calculateScore = () => {
+    let score = 0;
+    vocabQuestions.forEach((q, index) => {
+      if (selectedAnswers[index] === q.answer) {
+        score++;
+      }
+    });
+    return score;
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="results">
+        <h2>Quiz Complete!</h2>
+        <p>Your Score: {calculateScore()} / {vocabQuestions.length}</p>
+      </div>
+    );
   }
 
   const question = vocabQuestions[currentQuestion];
@@ -37,12 +48,28 @@ const Quiz = () => {
   return (
     <div className="quiz-container">
       <h2>Vocabulary Section</h2>
-      <div className="question-block">
-        <p>
-          <strong>{currentQuestion + 1}.</strong> {question.question}
-        </p>
-        <form>
-          {question.options.map((option, index) => (
-            <label key={index} className="option-label">
+      <div className="question-box">
+        <p><strong>{currentQuestion + 1}.</strong> {question.question}</p>
+        <div className="options-row">
+          {question.options.map((option, i) => (
+            <label key={i} className="option-label">
               <input
-                type="radio
+                type="radio"
+                name={`question-${currentQuestion}`}
+                value={option}
+                checked={selectedAnswers[currentQuestion] === option}
+                onChange={handleOptionChange}
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+      </div>
+      <button className="next-button" onClick={handleNext}>
+        {currentQuestion === vocabQuestions.length - 1 ? 'Submit' : 'Next'}
+      </button>
+    </div>
+  );
+};
+
+export default Quiz;
