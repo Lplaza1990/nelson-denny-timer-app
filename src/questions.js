@@ -1,55 +1,38 @@
-export const questions = {
-  vocabulary: [
-    {
-      question: "What is the meaning of 'benevolent'?",
-      options: ["Kind", "Mean", "Hostile", "Greedy"],
-      answer: "Kind"
-    },
-    {
-      question: "Select the synonym of 'diligent'.",
-      options: ["Lazy", "Hardworking", "Careless", "Forgetful"],
-      answer: "Hardworking"
-    },
-    {
-      question: "Choose the antonym of 'obscure'.",
-      options: ["Hidden", "Famous", "Dark", "Unknown"],
-      answer: "Famous"
-    }
-  ],
+export const vocabQuestions = [
+  {
+    question: "What is the meaning of 'benevolent'?",
+    options: ["Kind", "Mean", "Hostile", "Greedy"],
+    answer: "Kind"
+  },
+  {
+    question: "Select the synonym of 'diligent'.",
+    options: ["Lazy", "Hardworking", "Careless", "Forgetful"],
+    answer: "Hardworking"
+  },
+  {
+    question: "Choose the antonym of 'obscure'.",
+    options: ["Hidden", "Famous", "Dark", "Unknown"],
+    answer: "Famous"
+  }
+];
 
-  reading: [
-    {
-      question: "What can be inferred from the phrase 'The sun dipped below the horizon, casting golden shadows'?",
-      options: ["It was midday", "It was sunset", "It was raining", "It was morning"],
-      answer: "It was sunset"
-    },
-    {
-      question: "The main idea of a paragraph is:",
-      options: ["The first sentence of the paragraph", "A supporting detail", "The most important thought", "The conclusion"],
-      answer: "The most important thought"
-    },
-    {
-      question: "In a story, if a character is 'elated', they are likely:",
-      options: ["Depressed", "Angry", "Joyful", "Confused"],
-      answer: "Joyful"
-    }
-  ],
+export const comprehensionQuestions = [
+  {
+    question: "The passage states: 'Plants require sunlight and water to produce food through photosynthesis.' Based on this, which of the following is true?",
+    options: [
+      "Plants only need water to survive.",
+      "Photosynthesis occurs only at night.",
+      "Sunlight is essential for plant food production.",
+      "Plants do not need sunlight."
+    ],
+    answer: "Sunlight is essential for plant food production."
+  }
+];
 
-  synonyms: [
-    {
-      question: "Which word is a synonym of 'brief'?",
-      options: ["Long", "Quick", "Short", "Slow"],
-      answer: "Short"
-    },
-    {
-      question: "Which word is an antonym of 'scarce'?",
-      options: ["Rare", "Few", "Abundant", "Empty"],
-      answer: "Abundant"
-    },
-    {
-      question: "Which word is a synonym of 'ancient'?",
-      options: ["Modern", "Old", "Current", "Young"],
-      answer: "Old"
-    }
-  ]
-};
+export const synonymAntonymQuestions = [
+  {
+    question: "Which is a synonym for 'happy'?",
+    options: ["Miserable", "Angry", "Joyful", "Sad"],
+    answer: "Joyful"
+  }
+];
