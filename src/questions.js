@@ -19,31 +19,27 @@ export const vocabQuestions = [
   // Add more vocabulary questions here...
 ];
 
-export const readingQuestions = [
+export const comprehensionQuestions = [
   {
-    passage: "Nelson-Denny is a test used to measure reading comprehension and vocabulary.",
-    question: "What is the Nelson-Denny test used for?",
-    options: [
-      "Measuring physical fitness",
-      "Measuring reading comprehension and vocabulary",
-      "Testing math skills",
-      "Assessing personality"
-    ],
-    answer: "Measuring reading comprehension and vocabulary"
+    passage: "The Industrial Revolution began in the late 18th century...",
+    question: "What was a major cause of the Industrial Revolution?",
+    options: ["The rise of agriculture", "Technological innovations", "Collapse of empires", "New religions"],
+    answer: "Technological innovations"
   },
   {
-    passage: "Time management is important during standardized testing.",
-    question: "What is important during standardized testing?",
-    options: [
-      "Skipping questions",
-      "Time management",
-      "Talking to others",
-      "Ignoring instructions"
-    ],
-    answer: "Time management"
+    passage: "Photosynthesis is a process used by plants to convert light energy...",
+    question: "What do plants produce during photosynthesis?",
+    options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    answer: "Oxygen"
+  },
+  {
+    passage: "In Shakespeare's plays, characters often speak in iambic pentameter...",
+    question: "What is iambic pentameter?",
+    options: ["A poetic theme", "A meter with five beats per line", "A form of rhyme", "A character's role"],
+    answer: "A meter with five beats per line"
   }
-  // Add more reading comprehension questions here...
 ];
+
 
 export const synAntQuestions = [
   {
