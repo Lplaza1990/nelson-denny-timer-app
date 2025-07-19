@@ -26,6 +26,19 @@ function App() {
     setScore(0);
   };
 
+  const getQuestionsForSection = () => {
+    switch (section) {
+      case "vocabulary":
+        return questions.vocabulary;
+      case "reading":
+        return questions.reading;
+      case "synonyms":
+        return questions.synonyms;
+      default:
+        return [];
+    }
+  };
+
   return (
     <div className="App">
       {!section && (
@@ -40,6 +53,7 @@ function App() {
 
       {section && !quizComplete && (
         <Quiz
+          questions={getQuestionsForSection()}
           section={section}
           onFinish={handleFinishQuiz}
         />
@@ -48,7 +62,7 @@ function App() {
       {section && quizComplete && (
         <Result
           score={score}
-          total={questions[section].length}
+          total={getQuestionsForSection().length}
           onRestart={handleRestart}
           section={section}
         />
