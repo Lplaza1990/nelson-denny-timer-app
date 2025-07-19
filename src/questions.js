@@ -1,60 +1,68 @@
-export const questions = {
-  vocabulary: [
-    {
-      question: "What is the meaning of 'benevolent'?",
-      options: ["Kind", "Mean", "Hostile", "Greedy"],
-      answer: "Kind"
-    },
-    {
-      question: "Select the synonym of 'diligent'.",
-      options: ["Lazy", "Hardworking", "Careless", "Forgetful"],
-      answer: "Hardworking"
-    },
-    {
-      question: "Choose the antonym of 'obscure'.",
-      options: ["Hidden", "Famous", "Dark", "Unknown"],
-      answer: "Famous"
-    }
-  ],
+// src/questions.js
 
-  reading: [
-    {
-      question: "What can be inferred from the phrase 'The sun dipped below the horizon, casting golden shadows'?",
-      options: ["It was midday", "It was sunset", "It was raining", "It was morning"],
-      answer: "It was sunset"
-    },
-    {
-      question: "The main idea of a paragraph is:",
-      options: ["The first sentence of the paragraph", "A supporting detail", "The most important thought", "The conclusion"],
-      answer: "The most important thought"
-    },
-    {
-      question: "In a story, if a character is 'elated', they are likely:",
-      options: ["Depressed", "Angry", "Joyful", "Confused"],
-      answer: "Joyful"
-    }
-  ],
+export const vocabQuestions = [
+  {
+    question: "Select the best synonym for the word: Arduous",
+    options: ["Easy", "Difficult", "Quick", "Unnecessary"],
+    answer: "Difficult"
+  },
+  {
+    question: "Select the best synonym for the word: Benevolent",
+    options: ["Kind", "Cruel", "Selfish", "Apathetic"],
+    answer: "Kind"
+  },
+  {
+    question: "Select the best synonym for the word: Candid",
+    options: ["Deceptive", "Honest", "Timid", "Indifferent"],
+    answer: "Honest"
+  }
+  // Add more vocabulary questions here...
+];
 
-  synonyms: [
-    {
-      question: "Which word is a synonym of 'brief'?",
-      options: ["Long", "Quick", "Short", "Slow"],
-      answer: "Short"
-    },
-    {
-      question: "Which word is an antonym of 'scarce'?",
-      options: ["Rare", "Few", "Abundant", "Empty"],
-      answer: "Abundant"
-    },
-    {
-      question: "Which word is a synonym of 'ancient'?",
-      options: ["Modern", "Old", "Current", "Young"],
-      answer: "Old"
-    },
-    {
-      question: "Which is a synonym for 'happy'?",
-      options: ["Miserable", "Angry", "Joyful", "Sad"],
-      answer: "Joyful"
-    }
-  ]
-};
+export const readingQuestions = [
+  {
+    passage: "Nelson-Denny is a test used to measure reading comprehension and vocabulary.",
+    question: "What is the Nelson-Denny test used for?",
+    options: [
+      "Measuring physical fitness",
+      "Measuring reading comprehension and vocabulary",
+      "Testing math skills",
+      "Assessing personality"
+    ],
+    answer: "Measuring reading comprehension and vocabulary"
+  },
+  {
+    passage: "Time management is important during standardized testing.",
+    question: "What is important during standardized testing?",
+    options: [
+      "Skipping questions",
+      "Time management",
+      "Talking to others",
+      "Ignoring instructions"
+    ],
+    answer: "Time management"
+  }
+  // Add more reading comprehension questions here...
+];
+
+export const synAntQuestions = [
+  {
+    type: "synonym",
+    word: "Brisk",
+    options: ["Slow", "Quick", "Lazy", "Tired"],
+    answer: "Quick"
+  },
+  {
+    type: "antonym",
+    word: "Generous",
+    options: ["Kind", "Greedy", "Helpful", "Nice"],
+    answer: "Greedy"
+  },
+  {
+    type: "synonym",
+    word: "Silent",
+    options: ["Noisy", "Quiet", "Loud", "Talkative"],
+    answer: "Quiet"
+  }
+  // Add more synonym/antonym questions here...
+];
