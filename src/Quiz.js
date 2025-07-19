@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { questions } from './questions';
+import { vocabQuestions, comprehensionQuestions, synonymAntonymQuestions } from './questions';
 import Result from './Result';
 
 const sectionDurations = {
