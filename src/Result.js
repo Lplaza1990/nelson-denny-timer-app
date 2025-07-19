@@ -1,13 +1,13 @@
 import React from "react";
 
-const Result = ({ score, total, onRestart }) => {
+function Result({ score, total, onRestart, section }) {
   return (
-    <div className="result-container">
-      <h2>Quiz Completed</h2>
-      <p>You answered {score} out of {total} questions correctly.</p>
-      <button onClick={onRestart}>Restart Quiz</button>
+    <div className="results">
+      <h2>{section.charAt(0).toUpperCase() + section.slice(1)} Section Complete</h2>
+      <p>Your Score: {score} out of {total}</p>
+      <button onClick={onRestart}>Restart</button>
     </div>
   );
-};
+}
 
 export default Result;

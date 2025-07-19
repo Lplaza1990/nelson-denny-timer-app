@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Quiz from "./Quiz";
 import Result from "./Result";
-import { questions } from "./questions";
+import { vocabQuestions, comprehensionQuestions, synonymAntonymQuestions } from "./questions";
 
 function App() {
   const [section, setSection] = useState(null);
@@ -28,12 +28,12 @@ function App() {
 
   const getQuestionsForSection = () => {
     switch (section) {
-      case "vocabulary":
-        return questions.vocabulary;
-      case "reading":
-        return questions.reading;
+      case "vocab":
+        return vocabQuestions;
+      case "comprehension":
+        return comprehensionQuestions;
       case "synonyms":
-        return questions.synonyms;
+        return synonymAntonymQuestions;
       default:
         return [];
     }
@@ -45,12 +45,11 @@ function App() {
         <div className="welcome-screen">
           <h1>Nelson-Denny Reading Test Practice</h1>
           <p>Select a section to begin:</p>
-          <button onClick={() => handleStartSection("vocabulary")}>Vocabulary</button>
-          <button onClick={() => handleStartSection("reading")}>Reading Comprehension</button>
+          <button onClick={() => handleStartSection("vocab")}>Vocabulary</button>
+          <button onClick={() => handleStartSection("comprehension")}>Reading Comprehension</button>
           <button onClick={() => handleStartSection("synonyms")}>Synonyms & Antonyms</button>
         </div>
       )}
-
       {section && !quizComplete && (
         <Quiz
           questions={getQuestionsForSection()}
@@ -58,7 +57,6 @@ function App() {
           onFinish={handleFinishQuiz}
         />
       )}
-
       {section && quizComplete && (
         <Result
           score={score}
