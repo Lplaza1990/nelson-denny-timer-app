@@ -9,7 +9,15 @@ const sectionDurations = {
 };
 
 const Quiz = ({ section }) => {
-  const quizData = questions[section];
+  let quizData;
+  if (section === 'vocabulary') {
+    quizData = vocabQuestions;
+  } else if (section === 'reading') {
+    quizData = comprehensionQuestions;
+  } else if (section === 'synonyms') {
+    quizData = synonymAntonymQuestions;
+  }
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState({});
   const [showResult, setShowResult] = useState(false);
