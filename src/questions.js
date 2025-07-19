@@ -41,24 +41,31 @@ export const comprehensionQuestions = [
 ];
 
 
-export const synAntQuestions = [
+export const synonymAntonymQuestions = [
   {
-    type: "synonym",
-    word: "Brisk",
-    options: ["Slow", "Quick", "Lazy", "Tired"],
+    question: "Select the best synonym for the word: Benevolent",
+    options: ["Kind", "Selfish", "Hostile", "Cold"],
+    answer: "Kind"
+  },
+  {
+    question: "Select the best antonym for the word: Hostile",
+    options: ["Friendly", "Mean", "Aggressive", "Rude"],
+    answer: "Friendly"
+  },
+  {
+    question: "Select the best synonym for the word: Rapid",
+    options: ["Slow", "Quick", "Still", "Heavy"],
     answer: "Quick"
   },
   {
-    type: "antonym",
-    word: "Generous",
-    options: ["Kind", "Greedy", "Helpful", "Nice"],
-    answer: "Greedy"
+    question: "Select the best antonym for the word: Diligent",
+    options: ["Hardworking", "Careless", "Focused", "Persistent"],
+    answer: "Careless"
   },
   {
-    type: "synonym",
-    word: "Silent",
-    options: ["Noisy", "Quiet", "Loud", "Talkative"],
-    answer: "Quiet"
+    question: "Select the best synonym for the word: Ample",
+    options: ["Insufficient", "Abundant", "Little", "Sparse"],
+    answer: "Abundant"
   }
-  // Add more synonym/antonym questions here...
 ];
+
