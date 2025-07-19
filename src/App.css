@@ -1,0 +1,39 @@
+/* App.css */
+.App {
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.welcome-screen {
+  margin-top: 50px;
+}
+
+.quiz-container {
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.question-box {
+  margin-bottom: 1.5rem;
+}
+
+.options-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-label {
+  cursor: pointer;
+}
+
+.next-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.results {
+  margin-top: 3rem;
+}
